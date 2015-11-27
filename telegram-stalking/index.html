@@ -1,0 +1,27 @@
+<head>
+<meta charset="UTF-8">
+<style>
+h2{
+  margin:0;
+  padding:0;
+} 
+</style>
+</head>
+<h2 id="stalking-anyone-on-telegram">Stalking anyone on Telegram</h2>
+<small>Ola Flisbäck</small>
+<p>According to the Telegram CEO Pavel Durov, earlier this year the Telegram app was delivering <a href="http://techcrunch.com/2015/05/13/telegram-says-its-hit-62-maus-and-messaging-activity-has-doubled/">2 billion messages</a> daily and had 62 million monthly active users. Possibly some of that size can be attributed to Telegram's focus on security and privacy. The <a href="https://telegram.org/faq">Telegram FAQ</a> focuses quite a bit on that and for instance states:</p>
+<div class="figure">
+<img src="assets/faqprivacy.png" />
+
+</div>
+<p>After having read that I was surprised to see the amount of metadata received from my contacts. Most of the metadata is not directly visible in the web and mobile clients, but using a third party client such as <a href="https://github.com/vysheng/tg">vysheng's CLI client</a> any received metadata is displayed:</p>
+<div class="figure">
+<img src="assets/climetadata.png" />
+
+</div>
+<p>The Telegram android app sends a notification to all contacts when it becomes or stops being the &quot;foreground&quot; app on the device. Using that information alone it's at times easy to make guesses about who's talking to who if you have several contacts in common with a &quot;victim&quot;. An "attacker" will sometimes see the victim and another contact taking turns going active/inactive as they pass messages back and forth.</p>
+<h3 id="add-anyone-to-your-telegram-contacts">Add anyone to your Telegram contacts</h3>
+<p>The metadata may be a considerable problem in itself but what makes it worse is that Telegram does not require contacts to mutually agree that they should be connected! As long as an attacker know the phone number of the victim and add it to the android contacts the victim will show up as a Telegram contact and the attacker will automatically subscribe to the victim's metadata. As a bonus the victim will not be notified in any way and the attacker will not show up among the victim's Telegram contacts.</p>
+<h3 id="putting-it-together">Putting it together</h3>
+<p>The attacker then takes guesses at what Telegram contacts the victim may have. Adding them as android contacts makes them automatic Telegram contacts and the metadata analysis can begin. Using the metadata the attacker may have a good chance of figuring out who the victim is communicating with and when. That's quite problematic for an app focusing on protecting your conversations from snooping third parties ...</p>
+<p>See you on <a href="https://whispersystems.org/blog/signal/">Signal</a>!</p>
